@@ -1,5 +1,5 @@
 /* -------===============GOOGLE FONTS=======================---- */
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 /* -------===============CSS VARIABLES=======================---- */
 
@@ -33,6 +33,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
 }
 
 body{
@@ -63,11 +64,17 @@ body{
     color: var(--muted);
 }
 
-button{
+button, .button, .edit:hover{
     border: 1px solid rgb(0, 0, 0);
     padding: .35rem;
     border-radius: 10px;
-    background: linear-gradient(var(--light-blue),var(--mid-blue),var(--dark-blue));   
+    background: linear-gradient(var(--light-blue),var(--mid-blue),var(--dark-blue));  
+    cursor: pointer;
+    transition: .5s ease; 
+}
+button:hover,
+.button:hover{
+    background: linear-gradient(to top,var(--light-blue),var(--mid-blue),var(--dark-blue)); 
 }
 
 .profile-photo{
@@ -195,10 +202,10 @@ button{
 }
 
 .notification-popup{
-    /* display: flex; */
+    display: flex;
     position: absolute;
     flex-direction: column;
-    left: 300px;
+    left: 1rem;
     top: 15rem;
     width: 15rem;
     height: 30%;
@@ -210,7 +217,8 @@ button{
     display: none;
 }
 .notification{
-margin-bottom: .5rem;}
+    margin-bottom: .5rem;
+}
 
 
 /* -------===============SIDENAV AD=======================---- */
@@ -248,6 +256,7 @@ margin-bottom: .5rem;}
     min-height: 100vh;
     transition: .5s;
     overflow: hidden;
+    padding: 0 .75rem;
 }
 
 
@@ -256,11 +265,20 @@ margin-bottom: .5rem;}
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .15rem 1rem;
-    box-shadow: 0 0 20px rgba(128, 128, 128, 0.164);
+    padding: .35rem 1rem;
+    backdrop-filter: blur(20px);
+    background: linear-gradient(to right, var(--main-color), rgb(207, 207, 207), var(--main-color));
+}
+.logo{
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
 }
 .search{
-    width: 350px;
+    width: 500px;
     height: 35px;
 }
 .search input{
@@ -304,17 +322,221 @@ margin-bottom: .5rem;}
     justify-content: center;
     background-color: rgba(128, 128, 128, 0.605);
     padding:.2rem .35rem;
+    border-radius: 20px;
     border: 1px solid rgba(0, 0, 0, 0.671);
-    gap: .35rem;
+    gap: .25rem;
     
 }
-.user-acct i{
 
-}
 /* -------===============STORIES=======================---- */
 .stories{
-    width: 100%;
-    height: 30%;
-    background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  height: 12rem;
+  gap: 1rem;
 }
+
+.story{
+    padding: 20px;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: .75rem;
+    width: 100%;
+    height: 75%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.656);
+    box-shadow: 2px 2px 10px rgba(68, 67, 67, 0.205);
+}
+
+.story-info{
+    z-index: 2000000000000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: .25rem;
+    height: 100%;
+}
+.story .profile-photo{
+    width: 35px;
+    height: 35px;
+}
+.story .profile-photo img{
+    border: 2px dashed var(--dark-blue);
+}
+.story-info p{
+    position: absolute;
+    bottom: 0;
+}
+.story .overlay{
+    width: 400%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(1.5px);
+    background: linear-gradient(rgba(128, 128, 128, 0.176),rgba(0, 0, 0, 0.682));
+    z-index: 1;
+}
+.name{
+    margin-left: -.25rem;
+    padding: .25rem 1rem;
+}
+
+.story:nth-child(1){
+    background: url(../images/lauv.jpg) no-repeat center center/cover;
+}
+.story:nth-child(2){
+    background: url(../images/jb.jpg) no-repeat center center/cover;
+}
+.story:nth-child(3){
+    background: url(../images/jin.jpg) no-repeat center center/cover;
+}
+.story:nth-child(4){
+    background: url(../images/jk.jpg) no-repeat center center/cover;
+}
+.story:nth-child(5){
+    background: url(../images/img4.PNG) no-repeat center center/cover;
+}
+.story:nth-child(6){
+    background: url(../images/img3.PNG) no-repeat center center/cover;
+}
+.story:nth-child(7){
+    background: url(../images/img2.PNG) no-repeat center center/cover;
+}
+.story:nth-child(8){
+    background: url(../images/img1.PNG) no-repeat center center/cover;
+}
+.story:nth-child(9){
+    background: url(../images/img5.PNG) no-repeat center center/cover;
+}
+.story:nth-child(10){
+    background: url(../images/img6.PNG) no-repeat center center/cover;
+}
+.story:nth-child(11){
+    background: url(../images/img7.PNG) no-repeat center center/cover;
+}
+.story:nth-child(12){
+    background: url(../images/img8.PNG) no-repeat center center/cover;
+}
+
+
+
+/* -------===============CREATE POST SECTION=======================---- */
+.create-post{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--body-light-color);
+    padding: .4rem 1rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.335);
+}
+.create-post input[type="text"]{
+    justify-self: start;
+    padding-left: 1rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+.create-post img{
+    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.424);
+}
+/* -------===============FEEDS=======================---- */
+/* .feeds{
+    margin: .75rem 0;
+} */
+.feed{
+    background-color: var(--body-light-color);
+    border-radius: 20px;
+    padding: .5rem 1rem;
+    font-size: .85rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+    border: 1px solid rgba(99, 99, 99, 0.192);
+}
+.feed .head, .feed .user{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.main-user-more{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.user .edit{
+    padding: 1rem .5rem;
+    border-radius: 10px;
+    justify-self: flex-end;
+    border: 2px solid var(--mid-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+}
+
+.photo{
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20rem;
+    width: 100%;
+    margin: .7rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+}
+.action-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .6rem;
+    font-size: 1.4rem;
+}
+
+.liked-by{
+    display: flex;
+}
+
+.liked-by span{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid grey;
+    margin-left: -.6rem;
+}
+.liked-by span:first-child{
+    margin: 0;
+}
+.liked-by span img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.liked-by p{
+    margin-left: .35rem;
+}
+/* -------===============BASE=======================---- */
+/* -------===============BASE=======================---- */
+/* -------===============BASE=======================---- */
 /* -------===============BASE=======================---- */
